@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_hooks: ^0.18.4
   flutter_svg: ^1.1.0
   kartal: ^2.3.2
   vexana: ^2.8.0

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:zima_market/product/constants/image_paths.dart';
 import 'package:zima_market/product/constants/project_colors.dart';
 import 'package:kartal/kartal.dart';
+import 'package:zima_market/product/utility/project_image.dart';
 
 class BackGround extends StatelessWidget {
   const BackGround({Key? key}) : super(key: key);
@@ -25,10 +27,8 @@ class BackGround extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   child: Column(
                     children: [
-                      Text(
-                        'zima market',
-                        style: context.textTheme.displaySmall,
-                      ),
+                      ProjectImage.imageAsset(
+                          ImagePaths.trendyolDisplayIcon.path),
                       Text('Everything you are looking for...',
                           style: context.textTheme.bodyText1!
                               .copyWith(color: Colors.white))

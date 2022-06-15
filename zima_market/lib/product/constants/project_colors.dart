@@ -9,4 +9,6 @@ class ProjectColors {
   static final facebookColor = HexColor.fromHex("#4B6EA8");
   static final googleColor = HexColor.fromHex("#F04335");
   static const displayColor = Colors.white;
+  /* EXP COLOR */
+  static final cascadingWhite = HexColor.fromHex("#F6F6F6");
 }

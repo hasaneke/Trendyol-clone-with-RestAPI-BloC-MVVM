@@ -4,7 +4,9 @@ import 'package:zima_market/product/constants/project_colors.dart';
 import 'package:zima_market/product/constants/project_paddings.dart';
 
 class ProjectElevatedButton extends StatelessWidget {
-  const ProjectElevatedButton({
+  String? name;
+  ProjectElevatedButton({
+    this.name,
     Key? key,
   }) : super(key: key);
 
@@ -18,6 +20,6 @@ class ProjectElevatedButton extends StatelessWidget {
             style:
                 ElevatedButton.styleFrom(primary: ProjectColors.retroNectarine),
             onPressed: () {},
-            child: const Text('Giriş Yap')));
+            child: Text(name ?? '')));
   }
 }

@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:zima_market/features/login/view/login_view.dart';
+import 'package:flutter/services.dart';
+import 'package:zima_market/product/constants/project_colors.dart';
+import 'package:zima_market/product/navigator/app_router.dart';
 import 'package:zima_market/product/theme/themes.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+  MyApp({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: null,
+    ));
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
       title: 'Material App',
       theme: ProjectThemes.lightTheme,
-      //darkTheme: ThemeData.dark(),
-      home: const LoginView(),
     );
   }
 }

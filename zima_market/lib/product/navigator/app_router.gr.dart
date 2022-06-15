@@ -29,6 +29,8 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
+        RouteConfig('/#redirect',
+            path: '/', redirectTo: '/login', fullMatch: true),
         RouteConfig(LoginRoute.name, path: '/login'),
         RouteConfig(RegisterRoute.name, path: '/register')
       ];

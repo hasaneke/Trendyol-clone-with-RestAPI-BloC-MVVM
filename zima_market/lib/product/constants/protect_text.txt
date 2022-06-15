@@ -1,0 +1,1 @@
+Şifeniz en az 7 karakter ve en az 15 karakter olmalı, harf ve rakam içermelidir
