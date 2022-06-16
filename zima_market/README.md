@@ -1,4 +1,4 @@
-# zima_market
+# Trendyol Clone
 
 A new Flutter project.
 
