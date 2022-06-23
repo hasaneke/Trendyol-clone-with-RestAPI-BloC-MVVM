@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zima_market">
    <application
-        android:label="zima_market"
+        android:label="TrendyolClone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

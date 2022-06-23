@@ -1,0 +1,14 @@
+{
+    "auth" : {
+        "login" : "Giriş Yap",
+        "email" : "Email",
+        "password" : "Şifre",
+        "i_forgot_my_password" : "Şifremi unuttum",
+        "display_message" : "Aradığın her şey burada...",
+        "not_registered_yet" : "Henüz kaydolmadın mı?",
+        "register" : "Kayıt ol",
+        "female" : "Kadın",
+        "male" : "Erkek",
+        "are_you_a_member": "Üye misin?"
+    } 
+}

@@ -1,0 +1,14 @@
+{
+    "auth" : {
+        "login" : "Login",
+        "email" : "Email",
+        "password" : "Password",
+        "i_forgot_my_password" : "I forgot my password",
+        "display_message" : "Everything you are looking for...",
+        "not_registered_yet" : "Not registered yet",
+        "register" : "Register",
+        "female" : "Femaile",
+        "male" : "Male",
+        "are_you_a_member": "Are you a member"
+    } 
+}

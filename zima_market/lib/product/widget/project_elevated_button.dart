@@ -5,8 +5,10 @@ import 'package:zima_market/product/constants/project_paddings.dart';
 
 class ProjectElevatedButton extends StatelessWidget {
   String? name;
+  final Future<void> Function()? onPressed;
   ProjectElevatedButton({
     this.name,
+    this.onPressed,
     Key? key,
   }) : super(key: key);
 
@@ -19,7 +21,7 @@ class ProjectElevatedButton extends StatelessWidget {
         child: ElevatedButton(
             style:
                 ElevatedButton.styleFrom(primary: ProjectColors.retroNectarine),
-            onPressed: () {},
+            onPressed: onPressed,
             child: Text(name ?? '')));
   }
 }

@@ -29,22 +29,28 @@ environment:
 dependencies:
   auto_route: ^4.0.1
   cupertino_icons: ^1.0.2
+  easy_localization: ^3.0.1
   equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_hooks: ^0.18.4
   flutter_svg: ^1.1.0
+  freezed_annotation: ^2.0.3
   kartal: ^2.3.2
   vexana: ^2.8.0
+  json_serializable: ^6.2.0
 
 dev_dependencies:
   auto_route_generator: ^4.0.0
   build_runner: ^2.1.11
+  dio: ^4.0.6
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  freezed: ^2.0.3+1
   json_annotation: ^4.5.0
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -58,6 +64,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/
+    - assets/translations/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:kartal/kartal.dart';
-import 'package:zima_market/features/login/view/login_view.dart';
 import 'package:zima_market/product/constants/image_paths.dart';
 import 'package:zima_market/product/constants/project_colors.dart';
 import 'package:zima_market/product/constants/project_paddings.dart';
@@ -10,9 +9,10 @@ import 'package:zima_market/product/constants/project_texts.dart';
 import 'package:zima_market/product/constants/text_styles.dart';
 import 'package:zima_market/product/navigator/app_router.dart';
 import 'package:zima_market/product/utility/project_image.dart';
-import 'package:zima_market/product/widget/background_widget.dart';
+import 'package:zima_market/product/widget/project_background_widget.dart';
 import 'package:zima_market/product/widget/project_elevated_button.dart';
 import 'package:zima_market/product/widget/project_text_field.dart';
+import 'package:zima_market/product/widget/question_do_button.dart';
 
 class RegisterView extends HookWidget {
   const RegisterView({Key? key}) : super(key: key);
@@ -92,7 +92,7 @@ class _RegisterAuthForm extends StatelessWidget {
                       name: "Register",
                     ),
                     _signInMethods(),
-                    QuestionDoWidget(
+                    QuestionDoButton(
                       question: "Are you a member? ",
                       doText: "Login!",
                       onTap: () {
@@ -117,11 +117,11 @@ Padding _signInMethods() {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ProjectImage.iconAsset(
-          ImagePaths.facebookIcon.path,
+          ProjectImagePaths.facebookIcon.path,
           colors: ProjectColors.facebookColor,
         ),
         ProjectImage.iconAsset(
-          ImagePaths.googleIcon.path,
+          ProjectImagePaths.googleIcon.path,
           colors: ProjectColors.googleColor,
         )
       ],

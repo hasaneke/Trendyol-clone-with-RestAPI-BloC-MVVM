@@ -28,7 +28,7 @@ class BackGround extends StatelessWidget {
                   child: Column(
                     children: [
                       ProjectImage.imageAsset(
-                          ImagePaths.trendyolDisplayIcon.path),
+                          ProjectImagePaths.trendyolDisplayIcon.path),
                       Text('Everything you are looking for...',
                           style: context.textTheme.bodyText1!
                               .copyWith(color: Colors.white))

@@ -18,7 +18,11 @@ class ProjectTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: ProjectPaddings.primaryPadding,
-      child: TextField(
+      child: TextFormField(
+        validator: (text) {
+          if (text!.isEmpty) {}
+          return "cannot be empty";
+        },
         controller: controller,
         obscureText: isObsecure ?? false,
         decoration: InputDecoration(
