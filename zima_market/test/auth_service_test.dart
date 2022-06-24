@@ -6,7 +6,7 @@ import 'package:zima_market/product/service/auth_service.dart';
 void main() {
   late IAuthService authService;
   setUp(() {
-    authService = AuthService();
+    authService = AuthService.instance;
   });
   group("Auth Service Test", () {
     test('Auth Service Test - Login Test', () async {
@@ -14,6 +14,6 @@ void main() {
           LoginRequestModel(username: "kminchelle", password: "0lelplR"));
       expect(response.runtimeType, LoginResponseModel);
     });
-    test('Register test', () {});
+    test('Auth Service Test - Register Test', () {});
   });
 }

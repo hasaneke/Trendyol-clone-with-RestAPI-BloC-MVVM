@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zima_market/product/constants/project_paddings.dart';
 
-class ProjectTextField extends StatelessWidget {
+class ProjectTextFormField extends StatelessWidget {
   final String? hintText;
   final bool? isObsecure;
   final TextEditingController? controller;
   final Icon? suffixIcon;
-  const ProjectTextField({
+  const ProjectTextFormField({
     this.hintText,
     this.isObsecure,
     this.suffixIcon,
@@ -20,8 +20,10 @@ class ProjectTextField extends StatelessWidget {
       padding: ProjectPaddings.primaryPadding,
       child: TextFormField(
         validator: (text) {
-          if (text!.isEmpty) {}
-          return "cannot be empty";
+          if (text!.isEmpty) {
+            return "cannot be empty";
+          }
+          return null;
         },
         controller: controller,
         obscureText: isObsecure ?? false,

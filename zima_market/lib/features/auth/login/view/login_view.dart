@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,6 +25,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: BlocProvider<LoginBloc>(
             create: (context) =>
@@ -34,9 +33,16 @@ class LoginView extends StatelessWidget {
             child: Stack(
               children: [
                 const BackGround(),
-                _LoginAuthForm(
-                  height: context.height * 0.5,
-                  context: context,
+                Column(
+                  children: [
+                    Flexible(flex: 1, child: Container()),
+                    Flexible(
+                      flex: 6,
+                      child: _LoginAuthForm(
+                        context: context,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             )),
@@ -45,26 +51,31 @@ class LoginView extends StatelessWidget {
   }
 }
 
-class _LoginAuthForm extends HookWidget {
-  final double height;
+class _LoginAuthForm extends StatefulHookWidget {
   final BuildContext context;
   const _LoginAuthForm({
-    required this.height,
     required this.context,
     Key? key,
   }) : super(key: key);
 
   @override
+  State<_LoginAuthForm> createState() => _LoginAuthFormState();
+}
+
+class _LoginAuthFormState extends State<_LoginAuthForm> {
+  final formKey = GlobalKey<FormState>();
+
+  @override
   Widget build(context) {
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
+
     return Center(
       child: BlocConsumer<LoginBloc, LoginState>(
         listener: (context, state) {
-          log('?');
           if (state is LoginFailedState) {
             ScaffoldMessenger.of(context)
-                .showSnackBar(const SnackBar(content: Text('Login Failed')));
+                .showSnackBar(SnackBar(content: Text(state.error.message)));
           } else if (state is LoginComplete) {
             ScaffoldMessenger.of(context)
                 .showSnackBar(const SnackBar(content: Text('Login Success')));
@@ -82,47 +93,56 @@ class _LoginAuthForm extends HookWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   width: context.width,
-                  height: height,
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(25)),
                   padding: ProjectPaddings.containerPadding,
-                  child: Column(
-                    children: [
-                      ProjectTextField(
-                        hintText: "auth.email".tr(),
-                        controller: emailController,
-                      ),
-                      ProjectTextField(
-                        hintText: 'auth.password'.tr(),
-                        controller: passwordController,
-                        suffixIcon: const Icon(Icons.lock),
-                      ),
-                      _iForgotMyPassword(),
-                      ProjectElevatedButton(
-                        name: "auth.login".tr(),
-                        onPressed: () async {
-                          context.read<LoginBloc>().add(SignInEvent(
-                              email: emailController.text,
-                              password: passwordController.text));
-                        },
-                      ),
-                      _signInMethods(),
-                      QuestionDoButton(
-                        question: " ${'auth.not_registered_yet'.tr()}? ",
-                        doText: "${"auth.register".tr()}!",
-                        onTap: () {
-                          context
-                              .read<LoginBloc>()
-                              .add(NavigateToRegisterEvent());
-                        },
-                      ),
-                    ],
-                  ),
+                  child:
+                      _loginForm(emailController, passwordController, context),
                 ),
               ),
             ),
           );
         },
+      ),
+    );
+  }
+
+  Form _loginForm(TextEditingController emailController,
+      TextEditingController passwordController, BuildContext context) {
+    return Form(
+      key: formKey,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ProjectTextFormField(
+            hintText: "auth.email".tr(),
+            controller: emailController,
+          ),
+          ProjectTextFormField(
+            hintText: 'auth.password'.tr(),
+            controller: passwordController,
+            suffixIcon: const Icon(Icons.lock),
+          ),
+          _iForgotMyPassword(),
+          ProjectElevatedButton(
+            name: "auth.login".tr(),
+            onPressed: () async {
+              if (formKey.currentState!.validate()) {
+                context.read<LoginBloc>().add(SignInEvent(
+                    email: emailController.text,
+                    password: passwordController.text));
+              }
+            },
+          ),
+          _signInMethods(),
+          QuestionDoButton(
+            question: " ${'auth.not_registered_yet'.tr()}? ",
+            doText: "${"auth.register".tr()}!",
+            onTap: () {
+              context.read<LoginBloc>().add(NavigateToRegisterEvent());
+            },
+          ),
+        ],
       ),
     );
   }

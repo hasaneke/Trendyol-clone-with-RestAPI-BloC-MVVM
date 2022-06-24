@@ -16,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 1), () {
-      AutoRouter.of(context).push(const LoginRoute());
+      AutoRouter.of(context).replace(const LoginRoute());
     });
     super.initState();
   }
