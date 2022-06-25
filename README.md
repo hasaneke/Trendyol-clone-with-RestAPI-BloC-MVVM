@@ -2,6 +2,7 @@
 I cloned Trendyol login and register page and used dummyjson service to perform login request with RestAPI and get token.
 
 Statemangament: BloC
+Architecture : MVVM
 Packages: 
  - Easy Localization
  - AutoRouter
