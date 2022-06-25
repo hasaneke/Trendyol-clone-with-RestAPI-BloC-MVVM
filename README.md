@@ -5,6 +5,8 @@ Statemangament: BloC
 
 
 Architecture : MVVM
+
+
 Packages: 
  - Easy Localization
  - AutoRouter
