@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:zima_market/features/auth/register/model/register_request_model/register_request_model.dart';
+import 'package:zima_market/features/auth/register/model/register_request_model.dart';
 import 'package:zima_market/features/auth/register/service/register_service.dart';
 import 'package:zima_market/product/model/errors/service_error.dart';
 import 'package:zima_market/product/model/user/user.dart';

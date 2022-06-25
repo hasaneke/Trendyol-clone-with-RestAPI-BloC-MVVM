@@ -1,6 +1,7 @@
 import 'package:vexana/vexana.dart';
 import 'package:zima_market/features/auth/login/models/login_request_model/login_request_model.dart';
-import 'package:zima_market/features/auth/register/model/register_request_model/register_request_model.dart';
+import 'package:zima_market/features/auth/register/model/register_request_model.dart';
+
 import 'package:zima_market/product/model/errors/service_error.dart';
 import 'package:zima_market/product/model/user/user.dart';
 import 'package:zima_market/product/network/network_manager.dart';
