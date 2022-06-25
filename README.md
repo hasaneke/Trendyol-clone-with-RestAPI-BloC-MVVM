@@ -1,7 +1,9 @@
 # Trendyol-clone-with-RestAPI-BloC-MVVM
 I cloned Trendyol login and register page and used dummyjson service to perform login request with RestAPI and get token.
 
-Statemangament: BloC \n
+Statemangament: BloC
+
+
 Architecture : MVVM
 Packages: 
  - Easy Localization
