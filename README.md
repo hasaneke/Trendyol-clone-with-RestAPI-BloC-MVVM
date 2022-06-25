@@ -1,5 +1,14 @@
 # Trendyol-clone-with-RestAPI-BloC-MVVM
-In this project I used rest api and mvvm architecture with BloC state managment
+I cloned Trendyol login and register page and used dummyjson service to perform login request with RestAPI and get token.
+
+Statemangament: BloC
+Packages: 
+ - Easy Localization
+ - AutoRouter
+ - BloC
+ - Freezed
+ - Kartal
+ - Json Serializable
 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/67066911/175769404-3132d19c-08be-4f87-8980-ee3a5d2d9c03.png" width="250" title="hover text">
