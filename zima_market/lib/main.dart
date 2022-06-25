@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zima_market/product/constants/project_colors.dart';
 import 'package:zima_market/product/init/product_init.dart';
 import 'package:zima_market/product/navigator/app_router.dart';
+import 'package:zima_market/product/service/auth_service.dart';
 import 'package:zima_market/product/theme/themes.dart';
 
 void main() async {
@@ -13,8 +15,11 @@ void main() async {
   runApp(EasyLocalization(
       supportedLocales: const [Locale('en', 'US'), Locale('tr', 'TR')],
       path: 'assets/translations',
-      child: MyApp(
-        appRouter: productInit.appRouter,
+      child: RepositoryProvider(
+        create: (context) => AuthService(),
+        child: MyApp(
+          appRouter: productInit.appRouter,
+        ),
       )));
 }
 

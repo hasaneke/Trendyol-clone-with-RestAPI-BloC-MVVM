@@ -1,4 +1,4 @@
-import 'package:vexana/vexana.dart';
+import 'package:dio/dio.dart';
 import 'package:zima_market/features/auth/login/models/login_request_model/login_request_model.dart';
 import 'package:zima_market/features/auth/register/model/register_request_model.dart';
 
@@ -16,8 +16,7 @@ abstract class IAuthService {
 }
 
 class AuthService extends IAuthService {
-  AuthService._() : super(ProjectNetworkManager.instance);
-  static AuthService instance = AuthService._();
+  AuthService() : super(ProjectNetworkManager.instance);
   @override
   Future<User?> postUserLogin(LoginRequestModel model) async {
     try {

@@ -27,7 +27,7 @@ class RegisterView extends HookWidget {
       resizeToAvoidBottomInset: false,
       body: BlocProvider(
         create: (context) =>
-            RegisterBloc(RegisterService(AuthService.instance)),
+            RegisterBloc(RegisterService(context.read<AuthService>())),
         child: Stack(
           children: [
             const BackGround(),

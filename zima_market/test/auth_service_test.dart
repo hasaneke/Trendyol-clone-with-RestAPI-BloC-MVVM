@@ -6,7 +6,7 @@ import 'package:zima_market/product/service/auth_service.dart';
 void main() {
   late IAuthService authService;
   setUp(() {
-    authService = AuthService.instance;
+    authService = AuthService();
   });
   group("Auth Service Test", () {
     test('Auth Service Test - Login Test', () async {

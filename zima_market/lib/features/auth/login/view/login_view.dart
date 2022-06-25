@@ -28,7 +28,8 @@ class LoginView extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: BlocProvider<LoginBloc>(
-            create: (context) => LoginBloc(service: LoginService()),
+            create: (context) =>
+                LoginBloc(service: LoginService(context.read<AuthService>())),
             child: Stack(
               children: [
                 const BackGround(),
