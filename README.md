@@ -11,7 +11,6 @@ Packages:
  - Easy Localization
  - AutoRouter
  - BloC
- - Freezed
  - Kartal
  - Json Serializable
 
